@@ -24,7 +24,8 @@ const text = [
 
 const activeContainer = document.getElementById('container-active');
 const menuContainer = document.getElementById('container-menu');
-
+const textContainerh1 = document.querySelector('.text-container h1');
+const textContainerh3 = document.querySelector('.text-container h3');
 
 for (let i = 0; i < items.length; i++) {
     const element = items[i];
@@ -36,9 +37,12 @@ for (let i = 0; i < items.length; i++) {
     menuContainer.appendChild(img); 
 }
 
+// DEFAULT MAIN IMAGE LOAD
 const activeImage = document.createElement('img')
 activeImage.src = items[1];
 activeContainer.appendChild(activeImage);
+textContainerh1.textContent = title[1];
+textContainerh3.textContent = text[1];
 const activeMenuImage = document.getElementById('image-1');
 activeMenuImage.setAttribute('class', 'active-menu-image');
 
@@ -61,6 +65,8 @@ chevronUp.addEventListener('click', function(){
     const newActive = document.getElementById(`image-${currentIndex}`);
     newActive.setAttribute('class', 'active-menu-image');
     activeImage.src = items[currentIndex];
+    textContainerh1.textContent = title[currentIndex];
+    textContainerh3.textContent = text[currentIndex];
 })
 chevronDown.addEventListener('click', function(){
     //immagine attualmente nel container principale
@@ -77,4 +83,6 @@ chevronDown.addEventListener('click', function(){
     const newActive = document.getElementById(`image-${currentIndex}`);
     newActive.setAttribute('class', 'active-menu-image');
     activeImage.src = items[currentIndex];
+    textContainerh1.textContent = title[currentIndex];
+    textContainerh3.textContent = text[currentIndex];
 })
