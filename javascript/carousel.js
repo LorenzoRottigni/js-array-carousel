@@ -65,6 +65,15 @@ chevronUp.addEventListener('click', function(){
     const newActive = document.getElementById(`image-${currentIndex}`);
     newActive.setAttribute('class', 'active-menu-image');
     activeImage.src = items[currentIndex];
+    activeImage.animate([
+        // keyframes
+        { opacity : '0' },
+        { opacity : '1' }
+      ], {
+        // timing options
+        duration: 500,
+        iterations: 1
+      });
     textContainerh1.textContent = title[currentIndex];
     textContainerh3.textContent = text[currentIndex];
 })
@@ -83,6 +92,15 @@ chevronDown.addEventListener('click', function(){
     const newActive = document.getElementById(`image-${currentIndex}`);
     newActive.setAttribute('class', 'active-menu-image');
     activeImage.src = items[currentIndex];
+    activeImage.animate([
+        // keyframes
+        { opacity : '0' },
+        { opacity : '1' }
+      ], {
+        // timing options
+        duration: 500,
+        iterations: 1
+      });
     textContainerh1.textContent = title[currentIndex];
     textContainerh3.textContent = text[currentIndex];
 })
